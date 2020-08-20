@@ -23,4 +23,13 @@ class CashRegisterTests: XCTestCase {
         
         XCTAssertNotNil(CashRegister())
     }
+    
+    func testInitCreatesFundsAvailableFunds() {
+        
+        let availableFund = 100
+        
+        let sut = CashRegister(availableFund: availableFund)
+        
+        XCTAssertEqual(sut.availableFund, availableFund)
+    }
 }

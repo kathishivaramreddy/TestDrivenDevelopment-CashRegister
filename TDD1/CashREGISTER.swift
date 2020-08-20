@@ -9,5 +9,11 @@
 import Foundation
 
 class CashRegister {
-
+    
+    var availableFund: Int
+    
+    init(availableFund: Int = 0) {
+        
+        self.availableFund = availableFund
+    }
 }
