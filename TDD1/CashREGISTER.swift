@@ -23,4 +23,9 @@ class CashRegister {
         
         self.totalTransaction += cost
     }
+    
+    func acceptPayment(_ payment: Int) {
+        
+        self.totalTransaction -= payment
+    }
 }
