@@ -21,6 +21,6 @@ class CashRegister {
     
     func addItem(_ cost: Int) {
         
-        self.totalTransaction = cost
+        self.totalTransaction += cost
     }
 }

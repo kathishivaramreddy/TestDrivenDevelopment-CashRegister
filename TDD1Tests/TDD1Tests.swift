@@ -45,4 +45,16 @@ class CashRegisterTests: XCTestCase {
         
         XCTAssertEqual(sut.totalTransaction, itemCost)
     }
+    
+    func testAddItemWhenTwoItemsAreAdded() {
+        
+        let item1Cost = 40
+        let item2Cost = 60
+        
+        let expectedTotalCost = 100
+        sut.addItem(item1Cost)
+        sut.addItem(item2Cost)
+        
+        XCTAssertEqual(sut.totalTransaction, expectedTotalCost)
+    }
 }
