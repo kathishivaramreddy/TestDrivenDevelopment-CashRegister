@@ -71,4 +71,15 @@ class CashRegisterTests: XCTestCase {
        
         XCTAssertEqual(sut.totalTransaction, difference)
     }
+    
+    func testAcceptPaymentAddPaymentToAvailableFund() {
+                
+        sut.addItem(100)
+        
+        let payment = 100
+        
+        sut.acceptPayment(payment)
+        
+        XCTAssertEqual(sut.availableFund, 200)
+    }
 }

@@ -27,5 +27,6 @@ class CashRegister {
     func acceptPayment(_ payment: Int) {
         
         self.totalTransaction -= payment
+        self.availableFund += payment
     }
 }
