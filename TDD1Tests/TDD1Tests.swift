@@ -11,12 +11,21 @@ import XCTest
 
 class CashRegisterTests: XCTestCase {
     
+    var availableFund: Int!
+    var sut: CashRegister!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        super.setUp()
+        availableFund = 100
+        sut = CashRegister(availableFund: availableFund)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       
+        availableFund = nil
+        sut = nil
+        super.tearDown()
     }
 
     func testInitCreatesCashRegister() {
@@ -26,18 +35,10 @@ class CashRegisterTests: XCTestCase {
     
     func testInitCreatesFundsAvailableFunds() {
         
-        let availableFund = 100
-        
-        let sut = CashRegister(availableFund: availableFund)
-        
         XCTAssertEqual(sut.availableFund, availableFund)
     }
     
     func testAddItemAddItemCostToTotalTransaction() {
-        
-        let availableFund = 100
-        
-        let sut = CashRegister(availableFund: availableFund)
         
         let itemCost = 40
         sut.addItem(itemCost)
