@@ -12,8 +12,15 @@ class CashRegister {
     
     var availableFund: Int
     
+    var totalTransaction: Int = 0
+    
     init(availableFund: Int = 0) {
         
         self.availableFund = availableFund
+    }
+    
+    func addItem(_ cost: Int) {
+        
+        self.totalTransaction = cost
     }
 }

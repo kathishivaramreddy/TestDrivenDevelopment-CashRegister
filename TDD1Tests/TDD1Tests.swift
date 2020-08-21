@@ -10,7 +10,7 @@ import XCTest
 @testable import TDD1
 
 class CashRegisterTests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -31,5 +31,17 @@ class CashRegisterTests: XCTestCase {
         let sut = CashRegister(availableFund: availableFund)
         
         XCTAssertEqual(sut.availableFund, availableFund)
+    }
+    
+    func testAddItemAddItemCostToTotalTransaction() {
+        
+        let availableFund = 100
+        
+        let sut = CashRegister(availableFund: availableFund)
+        
+        let itemCost = 40
+        sut.addItem(itemCost)
+        
+        XCTAssertEqual(sut.totalTransaction, itemCost)
     }
 }
